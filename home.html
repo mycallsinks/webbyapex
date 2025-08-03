@@ -1,0 +1,219 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+
+
+
+  <style type="text/css">
+	@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}
+</style>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>EduRole Student Information System</title>
+
+<link rel="icon" type="image/png" href="https://sis.lamu.edu.zm/templates/edurole/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-startup-image" href="https://sis.lamu.edu.zm/templates/edurole/images/splash-screen-320x460.png" media="screen and (max-device-width: 320px)">
+<link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="https://sis.lamu.edu.zm/templates/edurole/images/splash-screen-640x920.png">
+<link rel="apple-touch-icon" href="https://sis.lamu.edu.zm/templates/edurole/images/apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://sis.lamu.edu.zm/templates/edurole/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://sis.lamu.edu.zm/templates/edurole/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://sis.lamu.edu.zm/templates/edurole/images/apple-touch-icon-144x144-precomposed.png">
+
+<link href="https://sis.lamu.edu.zm/templates/mobile/css/chat.css" rel="stylesheet" type="text/css">
+<link href="https://sis.lamu.edu.zm/templates/mobile/css/ddSlick.css" rel="stylesheet" type="text/css">
+<link href="https://sis.lamu.edu.zm/templates/mobile/css/bootstrap.css" rel="stylesheet" type="text/css"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link href="https://sis.lamu.edu.zm/templates/mobile/css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://sis.lamu.edu.zm/lib/jquery/jquery.js"></script><script type="text/javascript" src="https://sis.lamu.edu.zm/lib/bootstrap/bootstrap.js"></script><script type="text/javascript" src="https://sis.lamu.edu.zm/lib/jquery/jquery.dropdown.js"></script><script type="text/javascript" src="https://sis.lamu.edu.zm/lib/edurole/javascript/mail.js"></script><script type="text/javascript" src="https://sis.lamu.edu.zm/lib/edurole/javascript/mail.js"></script><script>
+$(document).ready(function(){
+	$("#search-box").keyup(function(){
+		$.ajax({ 
+		type: "GET",
+		url: "https://sis.lamu.edu.zm/api/search",
+		data:'data='+$(this).val(),
+		beforeSend: function(){
+			$("#search-box").css("background","#FFF url(https://sis.lamu.edu.zm/templates/mobile/images/loader.gif) no-repeat 325px");
+		},
+		success: function(data){
+			
+			$('.menuburger').text('OPEN MENU');
+			$('#menucontainer').addClass('d-none');
+			$("#suggesstion-box").show();
+			$("#suggesstion-box").html(data);
+			$("#search-box").css("background","#FFF");
+		}
+		});
+	});
+});
+</script>
+
+<script>
+
+document.addEventListener("click", function (e) {
+  $("#suggesstion-box").hide();
+});
+
+
+
+
+function showMenu() {
+	var element = document.getElementById("sidebar-sticky");
+  $('.menuburger').text('CLOSE MENU');
+  $("#navbar-brand").attr("onclick","hideMenu()");
+  $('#menucontainer').toggleClass('d-none');
+}
+function hideMenu() {
+	var element = document.getElementById("sidebar-sticky");
+  $('.menuburger').text('OPEN MENU');
+  $("#navbar-brand").attr("onclick","showMenu()");
+  $('#menucontainer').toggleClass('d-none');
+}
+
+
+
+
+</script>
+
+<link href="https://sis.lamu.edu.zm/templates/mobile/css/dashboard.css" rel="stylesheet">
+</head>
+<body style="">
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" id="navbar-brand" href="#" onclick="showMenu()">
+	  <img src="https://sis.lamu.edu.zm/templates/mobile/images/header.png" style=" height: 50px;"> 
+	  
+	  <div class="menuburger">OPEN MENU</div></a>      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+
+        </li>
+      </ul>
+	  
+	  
+</nav>
+	<div id="suggesstion-box" class="suggesstion-box" style="display: none;">
+	</div>
+	
+	<div class="container-fluid">
+      <div class="row">
+	  
+
+		
+<nav class="col-md-2 d-none d-md-block bg-light sidebar" id="menucontainer">
+							<div class="sidebar-sticky" id="sidebar-sticky">
+								<ul class="nav flex-column">
+														
+									<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+										<span>Current user: <strong>2102001097</strong></span>
+											<a class="d-flex align-items-center text-muted" href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+											</a>
+									</h6>
+					
+									<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+						<span>Basic student</span>
+						  <a class="d-flex align-items-center text-muted" href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+						  </a>
+					</h6>
+					
+					<ul class="nav flex-column mb-2"><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/home/show">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Home
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/information/personal">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Personal Information
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/register/course">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Course registration
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/grades/personal">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Grades
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/payments/personal">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Payments
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/confirmation/print">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Confirmation Slip
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/examination/self">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Exam Docket
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/password/change">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Change Password
+						</a>
+					</li><li class="nav-item">
+						<a class="nav-link" href="https://sis.lamu.edu.zm/logout/do">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+							Logout
+						</a>
+					</li>
+								</ul>
+							</ul></div>
+						</nav><main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"><div class="breadcrumb"><a href="https://sis.lamu.edu.zm/">Home</a></div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (Notification.permission !== 'granted')
+    Notification.requestPermission();
+});
+
+
+  if (Notification.permission !== 'granted')
+    Notification.requestPermission();
+  else {    var notification = new Notification('Student onboarding steps', {
+      icon: 'https://sis.zcas.ac.zm/templates/edurole/images/apple-touch-icon-144x144-precomposed.png',
+      body: 'Student portal activation steps',
+    });
+
+    notification.onclick = function () {
+      window.open('https://sis.lamu.edu.zm/datastore/uploads/ONLINE REGISTRATION .pdf');      
+    };}
+</script><div class="col-lg-12 greeter">Welcome NONCEDO MAGAGULA</div>
+			<div class="col-lg-12 panel panel-default">
+
+               	 	<table width="600" border="0" cellpadding="2"><tbody><tr><td width="117">Student number</td><td><b>2102001097</b></td></tr><tr><td>Your privileges</td> <td>Basic student</td></tr><tr><td></td></tr></tbody></table></div><div class="col-lg-12 padding20 panel panel-default loginpadding" style="padding-bottom: 15px;"><div class="itemheader"><h2>News and updates</h2></div> <p></p><div style="border-bottom: 1px dotted #ccc; height: 20px;">
+				<div style="width: 85%; float:left;"> <b><a href="https://sis.lamu.edu.zm/item/show/171">Student onboarding steps</a></b></div>
+				<div class="hidden" style="width: 15%; float:left;">2024-01-07 11:51:26</div>
+			</div><div style="border-bottom: 1px dotted #ccc; height: 20px;">
+				<div style="width: 85%; float:left;"> <b><a href="https://sis.lamu.edu.zm/item/show/170">EduRole Update</a></b></div>
+				<div class="hidden" style="width: 15%; float:left;">2023-04-11 10:45:44</div>
+			</div><p></p></div><div class="col-lg-12 padding20 panel panel-default loginpadding" style="padding-bottom: 15px;"><div class="itemheader"><h2>Memorandums relevant to you</h2></div> <p></p></div><div class="col-lg-12 panel panel-default"></div>		</main>
+	</div>
+</div>
+			  
+
+<div class="footer">
+	<div class="center">
+
+
+
+
+		<div class="float footerbox" style="">
+			<img src="https://edurole.mu.ac.zm/templates/edurole/images/apple-touch-icon-precomposed.png">
+		</div>
+		<div class="float footerbox" style="">
+			Copyright © 2011-2022 <b> Powered by <a href="http://www.edurole.com">EduRole </a> </b>| <b> <a href="http://www.lamu.edu.zm"> Lusaka Apex Medical University </a></b> <br> <div style="color: #999;">	
+			Edurole is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NC-ND 3.0 Unported License</a>.
+			<br> You accessing EduRole from: 102.208.220.207		</div>
+
+
+	</div>
+</div></div></body></html>
